@@ -1,0 +1,2260 @@
+DAY 1 — How the Internet Works
+Learn
+Client
+Server
+Browser
+Web server
+Domain
+IP address
+DNS
+HTTP
+HTTPS
+Resource
+
+MDN HTTP Overview
+
+PortSwigger
+
+No vulnerability lab yet.
+
+Complete:
+
+Getting Started with Web Security Academy
+
+PortSwigger Getting Started
+
+Practice
+
+Take:
+
+https://example.com
+
+Explain:
+
+Browser
+ ↓
+DNS
+ ↓
+IP
+ ↓
+TCP/TLS
+ ↓
+HTTP request
+ ↓
+Server
+ ↓
+HTTP response
+ ↓
+Browser
+Notes
+
+Write definitions for:
+
+DNS
+IP
+HTTP
+HTTPS
+Client
+Server
+Request
+Response
+Test
+
+What happens technically after you enter a URL and press Enter?
+
+DAY 2 — HTTP Requests
+Learn
+GET
+POST
+PUT
+PATCH
+DELETE
+HEAD
+OPTIONS
+Resource
+
+MDN HTTP Methods
+
+PortSwigger
+
+No vulnerability lab.
+
+Practice
+
+Open Chrome:
+
+F12 → Network
+
+Visit several pages.
+
+Identify:
+
+GET
+POST
+Status
+Headers
+Cookies
+Query parameters
+Request body
+Response
+Notes
+
+Create:
+
+GET = retrieve
+POST = submit/create
+PUT = replace
+PATCH = modify
+DELETE = remove
+Test
+
+What is the difference between GET and POST?
+
+DAY 3 — HTTP Status Codes
+Learn
+200
+201
+204
+301
+302
+304
+400
+401
+403
+404
+405
+429
+500
+502
+503
+Resource
+
+MDN HTTP Status Codes
+
+Practice
+
+Use:
+
+curl -I https://example.com
+Notes
+
+Create a status-code cheat sheet.
+
+Test
+
+Difference between:
+
+401 vs 403
+
+DAY 4 — HTTP Headers
+Learn
+
+Important headers:
+
+Host
+User-Agent
+Cookie
+Set-Cookie
+Authorization
+Content-Type
+Content-Length
+Origin
+Referer
+Accept
+Cache-Control
+Location
+Resource
+
+MDN HTTP Headers
+
+Practice
+
+Use Chrome DevTools and identify at least 15 headers.
+
+Test
+
+What is the difference between:
+
+Cookie
+Set-Cookie
+DAY 5 — Cookies
+Learn
+Cookies
+Session cookies
+Persistent cookies
+Secure
+HttpOnly
+SameSite
+Domain
+Path
+Expiration
+Resource
+
+MDN Cookies
+
+PortSwigger
+
+Read:
+
+Authentication → Session management
+
+PortSwigger Authentication
+
+Practice
+
+Open:
+
+DevTools → Application → Cookies
+
+Study cookies on websites you are authorized to inspect.
+
+Test
+
+What does:
+
+HttpOnly
+Secure
+SameSite
+
+do?
+
+DAY 6 — HTML
+Learn
+HTML
+Forms
+Inputs
+Attributes
+Links
+Forms
+User-controlled input
+Resource
+
+MDN HTML
+
+Practice
+
+Create:
+
+<form>
+<input>
+<textarea>
+<button>
+</form>
+Test
+
+What is the difference between:
+
+<input value="">
+
+and:
+
+<textarea></textarea>
+DAY 7 — JavaScript Basics
+Learn
+Variables
+Functions
+Objects
+Arrays
+Events
+DOM
+Resource
+
+MDN JavaScript Guide
+
+Practice
+
+Create a simple HTML page with JavaScript.
+
+Understand:
+
+document.getElementById()
+document.querySelector()
+Test
+
+What is the DOM?
+
+DAY 8 — JavaScript + HTTP
+Learn
+fetch()
+JSON
+AJAX
+XMLHttpRequest
+API requests
+Resource
+
+MDN Fetch API
+
+Practice
+
+Create:
+
+fetch("/api/test")
+
+Understand:
+
+Browser
+ ↓
+JavaScript
+ ↓
+HTTP request
+ ↓
+API
+ ↓
+JSON response
+Test
+
+Why is JavaScript important for bug bounty?
+
+DAY 9 — Browser DevTools
+Learn
+
+Master:
+
+Elements
+Console
+Network
+Application
+Sources
+Storage
+Practice
+
+Choose an application you own.
+
+Map:
+
+Pages
+API requests
+Cookies
+LocalStorage
+SessionStorage
+JS files
+Test
+
+Where would you look for API requests?
+
+DAY 10 — JSON
+Learn
+{
+  "username": "test",
+  "id": 123
+}
+
+Learn:
+
+Objects
+Arrays
+Nested objects
+JSON request
+JSON response
+Practice
+
+Use browser DevTools and identify JSON responses.
+
+Test
+
+What is the difference between:
+
+JSON
+HTML
+DAY 11 — Linux Basics
+Learn
+pwd
+ls
+cd
+mkdir
+touch
+cat
+less
+cp
+mv
+rm
+Resource
+
+Linux Journey
+
+Practice
+
+Create a directory:
+
+bugbounty
+ ├── notes
+ ├── labs
+ ├── recon
+ └── reports
+Test
+
+Explain:
+
+pwd
+ls -la
+cd ..
+DAY 12 — Linux Security Commands
+
+Learn:
+
+grep
+find
+head
+tail
+sort
+uniq
+cut
+wc
+Practice
+
+Create a fake list of URLs and extract unique domains.
+
+Test
+
+How would you search a file for the word:
+
+admin
+
+?
+
+DAY 13 — Networking
+Learn
+TCP
+UDP
+Ports
+IP
+DNS
+NAT
+Firewall
+Resource
+
+Cloudflare Learning Center
+
+Practice
+
+Run:
+
+ping example.com
+nslookup example.com
+Test
+
+What is port 443?
+
+DAY 14 — DNS
+Learn
+A
+AAAA
+CNAME
+MX
+TXT
+NS
+Practice
+
+Use:
+
+dig example.com
+Test
+
+What does a CNAME record do?
+
+DAY 15 — HTTPS/TLS
+Learn
+TLS
+Certificates
+Encryption
+HTTPS
+Certificate authorities
+MITM concept
+Resource
+
+Cloudflare TLS
+
+Practice
+
+Inspect a certificate using your browser.
+
+Test
+
+Why doesn't HTTPS simply mean "the website is secure"?
+
+DAY 16 — Burp Suite Installation
+Resource
+
+PortSwigger Burp Getting Started
+
+Learn
+Proxy
+Browser
+Intercept
+Practice
+
+Intercept your first request in Burp.
+
+Test
+
+Explain:
+
+Browser → Burp → Server
+DAY 17 — Burp HTTP History
+Learn
+HTTP history
+Filtering
+Searching
+Request/response
+Practice
+
+Capture 50 requests.
+
+Categorize them:
+
+GET
+POST
+API
+Static
+Authentication
+Test
+
+Why is HTTP history important?
+
+DAY 18 — Burp Repeater
+Learn
+
+Repeater is one of your most important tools.
+
+Practice
+
+Take one request:
+
+Send to Repeater
+
+Modify:
+
+parameter
+header
+cookie
+method
+
+Observe the response.
+
+Test
+
+What is Repeater used for?
+
+DAY 19 — Burp Intruder
+Learn
+Positions
+Payloads
+Attack types
+Response analysis
+Practice
+
+Use Intruder only against PortSwigger labs.
+
+Test
+
+When would Intruder be useful?
+
+DAY 20 — Burp Decoder
+Learn
+URL encoding
+Base64
+HTML encoding
+Hex
+Practice
+
+Decode and re-encode:
+
+URL
+Base64
+HTML
+Test
+
+Why is encoding important in security testing?
+
+DAY 21 — Burp Comparer
+Learn
+
+Compare:
+
+Request A
+Request B
+Practice
+
+Compare two authenticated requests with different parameters.
+
+Test
+
+Why might tiny response differences matter?
+
+DAY 22 — Burp Scope
+Learn
+Target scope
+Out-of-scope traffic
+Site map
+Practice
+
+Configure a PortSwigger lab scope.
+
+Test
+
+Why should you always define scope?
+
+DAY 23 — Authentication Concepts
+Learn
+
+Authentication vs authorization.
+
+Resource
+
+PortSwigger Authentication
+
+Practice
+
+Create:
+
+User A
+User B
+Admin
+
+in a local lab/application.
+
+Test
+
+Authentication answers:
+
+Who are you?
+
+Authorization answers:
+
+What are you allowed to do?
+
+DAY 24 — Sessions
+Learn
+Session ID
+Session cookie
+Logout
+Session expiration
+Session fixation
+Practice
+
+Observe session changes after login/logout.
+
+Test
+
+Why should sessions be unpredictable?
+
+DAY 25 — SQL Fundamentals
+Learn
+SELECT
+FROM
+WHERE
+AND
+OR
+ORDER BY
+UNION
+Resource
+
+SQLBolt
+
+Practice
+
+Complete SQLBolt lessons 1–6.
+
+Test
+
+Write a query that selects users where:
+
+age > 18
+DAY 26 — SQL Injection Introduction
+Resource
+
+PortSwigger SQL Injection
+
+Lab
+
+SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
+
+Practice
+
+Understand:
+
+Input
+ ↓
+SQL query
+ ↓
+Database
+Test
+
+Why does SQL injection happen?
+
+DAY 27 — SQL Injection Authentication Bypass
+Resource
+
+PortSwigger SQLi learning path.
+
+Lab
+
+SQL injection vulnerability allowing login bypass
+
+Practice
+
+Use Repeater.
+
+Notes
+
+Document:
+
+Input
+Request
+Response
+Why vulnerable
+Impact
+Fix
+Test
+
+Explain why changing SQL logic can bypass authentication.
+
+DAY 28 — SQL UNION
+Learn
+Number of columns
+Compatible data types
+UNION
+Database information
+Labs
+
+PortSwigger:
+
+SQL injection attack, querying the database type and version
+
+Practice
+
+Solve it without looking at the solution.
+
+Test
+
+Why must you determine the number of columns?
+
+DAY 29 — SQLi Review
+Labs
+
+Redo:
+
+Hidden data
+Login bypass
+Database version
+Practice
+
+Solve without notes.
+
+Test
+
+Explain the complete SQLi methodology.
+
+DAY 30 — PHASE 1 EXAM
+
+No new material.
+
+Challenge
+
+Take a PortSwigger:
+
+Mystery Lab
+
+The Academy provides mystery labs specifically to practice recon and analysis without being told the vulnerability type.
+
+You pass if
+
+You can:
+
+Configure Burp
+Capture request
+Understand HTTP
+Modify request
+Use Repeater
+Identify parameters
+Explain cookies
+Solve basic SQLi
+🟡 PHASE 2 — DAYS 31–60
+Core Bug Bounty Vulnerabilities
+DAY 31 — SQLi Advanced
+Learn
+Error-based SQLi
+Blind SQLi
+Boolean conditions
+Time delays
+Resource
+
+PortSwigger SQLi
+
+Labs
+
+Complete the next Apprentice SQLi labs, especially:
+
+Conditional responses
+Error-based SQLi
+Time-delay SQLi
+
+The current SQLi learning path contains 51 learning items and labs.
+
+DAY 32 — Blind SQLi
+Lab
+
+PortSwigger:
+
+Blind SQL injection with conditional responses
+
+Practice
+
+Determine whether a condition is:
+
+TRUE
+FALSE
+
+based on application behavior.
+
+Test
+
+What makes blind SQLi different from normal SQLi?
+
+DAY 33 — XSS Fundamentals
+Resource
+
+PortSwigger XSS
+
+Learn
+Reflected
+Stored
+DOM
+Lab
+
+Reflected XSS into HTML context
+
+Test
+
+Explain:
+
+Input → HTML → Browser
+DAY 34 — Reflected XSS
+Labs
+
+Complete beginner reflected-XSS labs.
+
+Practice
+
+Identify:
+
+Reflection point
+Context
+Encoding
+Execution
+Test
+
+What is reflected XSS?
+
+DAY 35 — Stored XSS
+Lab
+
+Stored XSS into HTML context
+
+Practice
+
+Understand why stored XSS can affect another user.
+
+Test
+
+Difference between reflected and stored XSS?
+
+DAY 36 — XSS Contexts
+Learn
+
+XSS inside:
+
+HTML
+Attribute
+JavaScript
+URL
+Lab
+
+Reflected XSS into attribute context
+
+Test
+
+Why does context determine the appropriate testing approach?
+
+DAY 37 — DOM XSS
+Resource
+
+PortSwigger DOM XSS.
+
+Lab
+
+DOM XSS in document.write sink
+
+Practice
+
+Trace:
+
+Source
+ ↓
+JavaScript
+ ↓
+Sink
+Test
+
+What is an XSS source?
+
+What is an XSS sink?
+
+DAY 38 — DOM Invader
+Learn
+DOM Invader
+Sources
+Sinks
+Practice
+
+Use Burp's browser.
+
+Test
+
+Why can DOM XSS be missed by simply looking at server responses?
+
+DAY 39 — XSS Filters
+Labs
+
+Do:
+
+Reflected XSS with some SVG markup allowed
+
+Then:
+
+Reflected XSS with most tags and attributes blocked
+
+Test
+
+Why do blacklist filters often fail?
+
+DAY 40 — XSS Review
+
+Redo:
+
+Reflected
+Stored
+DOM
+Filter bypass
+Test
+
+Given an input reflection point, identify the XSS context.
+
+DAY 41 — Authentication Testing
+Resource
+
+PortSwigger Authentication
+
+Lab
+
+Username enumeration via subtly different responses
+
+Test
+
+What is username enumeration?
+
+DAY 42 — Brute-Force Protection
+Lab
+
+Broken brute-force protection, IP block
+
+Learn
+Rate limits
+Account lockout
+IP restrictions
+Test
+
+Why is rate limiting important?
+
+DAY 43 — Password Reset
+Labs
+
+Study password-reset labs.
+
+Learn
+Reset tokens
+Token predictability
+Password reset poisoning
+Host header influence
+Test
+
+What properties should a reset token have?
+
+DAY 44 — Authentication Review
+
+Solve multiple authentication labs without solutions.
+
+Notes
+
+Create:
+
+Authentication checklist
+Test
+
+List 10 things you would inspect on a login page.
+
+DAY 45 — Access Control
+Resource
+
+PortSwigger Access Control
+
+Lab
+
+Unprotected admin functionality
+
+Learn
+Vertical privilege escalation
+Horizontal privilege escalation
+Test
+
+Authentication ≠ authorization.
+
+Explain why.
+
+DAY 46 — IDOR
+Learn
+
+Insecure Direct Object References
+
+Practice
+
+Create:
+
+User A → object 1001
+User B → object 1002
+
+Test whether authorization is enforced.
+
+Test
+
+What makes an IDOR a security issue rather than simply a predictable ID?
+
+DAY 47 — Horizontal Privilege Escalation
+Lab
+
+PortSwigger:
+
+User ID controlled by request parameter
+
+Practice
+
+Compare two users' requests.
+
+Test
+
+What is horizontal privilege escalation?
+
+DAY 48 — Vertical Privilege Escalation
+Lab
+
+Method-based access control can be circumvented
+
+Practice
+
+Study:
+
+Admin request
+Normal-user request
+Test
+
+What is vertical privilege escalation?
+
+DAY 49 — Access-Control Methodology
+Create checklist
+
+For every endpoint ask:
+
+Who can access?
+What object?
+What role?
+What HTTP method?
+What parameters?
+What happens without session?
+What happens with another user's session?
+Test
+
+Apply the checklist to a PortSwigger lab.
+
+DAY 50 — Access Control Review
+
+Complete several Apprentice access-control labs.
+
+Goal
+
+Solve without solution.
+
+DAY 51 — CSRF
+Resource
+
+PortSwigger CSRF
+
+Lab
+
+CSRF where token validation depends on token being present
+
+Learn
+CSRF
+Same-origin
+Cookies
+CSRF tokens
+Test
+
+Why can cookies create CSRF risk?
+
+DAY 52 — CSRF Tokens
+Labs
+
+CSRF where token validation depends on request method
+
+Practice
+
+Study how changing request method affects defenses.
+
+DAY 53 — CSRF + SameSite
+Learn
+SameSite=Lax
+SameSite=Strict
+SameSite=None
+Resource
+
+MDN SameSite cookies
+
+Test
+
+How does SameSite reduce CSRF risk?
+
+DAY 54 — CORS
+Resource
+
+MDN CORS
+
+PortSwigger
+
+CORS
+
+Lab
+
+CORS vulnerability with basic origin reflection
+
+Test
+
+What does:
+
+Access-Control-Allow-Origin
+
+do?
+
+DAY 55 — CORS Advanced
+Labs
+
+CORS vulnerability with trusted null origin
+
+CORS vulnerability with trusted insecure protocols
+
+Test
+
+Why is:
+
+Access-Control-Allow-Origin: *
+
+not automatically equivalent to a critical vulnerability?
+
+DAY 56 — Path Traversal
+Resource
+
+PortSwigger Path Traversal
+
+Labs
+
+Start with basic path traversal.
+
+Learn
+../
+absolute paths
+encoding
+normalization
+Test
+
+What is directory traversal?
+
+DAY 57 — Path Traversal Filters
+Labs
+
+Complete encoding/filter-bypass path traversal labs.
+
+Practice
+
+Understand transformations:
+
+Input
+ ↓
+Decoder
+ ↓
+Normalizer
+ ↓
+Filesystem
+DAY 58 — File Upload
+Resource
+
+PortSwigger File Upload
+
+Labs
+
+Start with:
+
+Remote code execution via web shell upload
+
+in the PortSwigger file-upload lab set.
+
+Test
+
+Why isn't checking only the file extension sufficient?
+
+DAY 59 — File Upload Bypass
+Learn
+Content-Type
+Extension validation
+Filename
+File content
+PUT uploads
+Practice
+
+Complete the remaining Apprentice file-upload labs.
+
+DAY 60 — PHASE 2 EXAM
+
+Take a Mystery Lab.
+
+You should now be able to recognize:
+
+SQLi
+XSS
+Authentication
+Authorization
+IDOR
+CSRF
+CORS
+Path Traversal
+File Upload
+
+If you cannot solve it, do not move to Phase 3 yet.
+
+🟠 PHASE 3 — DAYS 61–90
+Recon + APIs + Advanced Web Security
+DAY 61 — Recon Methodology
+Learn
+Target
+ ↓
+Assets
+ ↓
+Subdomains
+ ↓
+Hosts
+ ↓
+Endpoints
+ ↓
+Parameters
+ ↓
+Technology
+ ↓
+Vulnerabilities
+Resource
+
+OWASP WSTG
+
+Practice
+
+Build a recon checklist.
+
+DAY 62 — Subdomains
+Learn
+Subdomain enumeration
+DNS
+Certificate Transparency
+Tool
+
+subfinder
+
+Practice
+
+Use it against a domain you own or an authorized lab.
+
+Test
+
+Why can subdomains expand attack surface?
+
+DAY 63 — DNS Recon
+Learn
+A
+AAAA
+CNAME
+MX
+TXT
+NS
+Tool
+
+dnsx
+
+Practice
+
+Resolve authorized subdomains.
+
+DAY 64 — HTTP Probing
+Tool
+
+httpx
+
+Learn
+Live hosts
+Status codes
+Titles
+Technologies
+Practice
+
+Take your authorized host list and identify live HTTP services.
+
+DAY 65 — URL Discovery
+Learn
+
+Historical URLs.
+
+Tools
+gau
+waybackurls
+Practice
+
+Use them only on authorized domains.
+
+Test
+
+Why are old URLs useful?
+
+DAY 66 — Crawling
+Tool
+
+katana
+
+Learn
+Crawling
+Links
+JS
+Endpoints
+Practice
+
+Crawl an authorized application.
+
+DAY 67 — JavaScript Recon
+Learn
+
+Search JS for:
+
+/api
+/graphql
+/admin
+/internal
+/debug
+/auth
+/token
+Practice
+
+Take 10 JavaScript files from a lab/your own app and map endpoints.
+
+DAY 68 — Parameter Discovery
+Learn
+GET parameters
+POST parameters
+JSON parameters
+Hidden parameters
+Tool
+
+Arjun
+
+Practice
+
+Only authorized targets.
+
+DAY 69 — Content Discovery
+Tool
+
+ffuf
+
+Learn
+Directory discovery
+Wordlists
+Status codes
+Response size
+Practice
+
+Use PortSwigger labs/local vulnerable applications.
+
+DAY 70 — Recon Automation
+
+Build:
+
+subdomains
+ ↓
+DNS
+ ↓
+HTTP probing
+ ↓
+URLs
+ ↓
+JS
+Goal
+
+Understand the pipeline, not just copy a command.
+
+DAY 71 — API Fundamentals
+Resource
+
+OWASP API Security
+
+Resource
+
+PortSwigger API Testing
+
+Learn
+REST
+JSON
+Endpoints
+HTTP methods
+API authentication
+DAY 72 — API Recon
+
+PortSwigger API learning path.
+
+Labs
+
+Start:
+
+API recon
+
+API documentation
+
+Discovering API documentation
+
+Test
+
+Where might an API reveal functionality not exposed by the UI?
+
+DAY 73 — API Documentation
+Learn
+OpenAPI
+Swagger
+JSON documentation
+Hidden endpoints
+Lab
+
+Exploiting an API endpoint using documentation
+
+The current PortSwigger API learning path includes these API documentation labs.
+
+DAY 74 — HTTP Methods
+Labs
+
+PortSwigger API:
+
+Identifying supported HTTP methods
+
+Identifying supported content types
+
+Practice
+
+Test how APIs respond to:
+
+GET
+POST
+PUT
+PATCH
+DELETE
+OPTIONS
+
+in labs.
+
+DAY 75 — API Authorization
+Learn
+
+OWASP:
+
+BOLA
+BFLA
+Broken object property authorization
+Practice
+
+Use two lab users and compare API requests.
+
+DAY 76 — API BOLA
+Lab
+
+Use PortSwigger API labs involving unauthorized access to objects.
+
+Exercise
+
+For every API endpoint ask:
+
+Who am I?
+Which object?
+Who owns object?
+Does server verify ownership?
+DAY 77 — API Mass Assignment
+Learn
+JSON properties
+Hidden fields
+Role
+Price
+Account attributes
+Practice
+
+In an authorized lab, compare:
+
+{
+ "username":"test"
+}
+
+with additional server-side properties.
+
+DAY 78 — API Rate Limiting
+Learn
+Rate limits
+Resource consumption
+Abuse prevention
+Practice
+
+Study rate-limiting behavior in labs.
+
+DAY 79 — JWT Fundamentals
+Resource
+
+PortSwigger JWT
+
+Learn
+Header
+Payload
+Signature
+Practice
+
+Decode a JWT without attempting to bypass anything.
+
+DAY 80 — JWT Attacks
+Learn
+Algorithm confusion
+Weak signing keys
+Signature verification
+Token claims
+Practice
+
+PortSwigger JWT labs.
+
+DAY 81 — OAuth Fundamentals
+Resource
+
+PortSwigger OAuth
+
+Learn
+Client
+Authorization server
+Resource server
+Redirect URI
+Authorization code
+Access token
+DAY 82 — OAuth Attacks
+Labs
+
+Complete beginner OAuth labs.
+
+Test
+
+Why is redirect URI validation important?
+
+DAY 83 — OAuth Advanced
+Learn
+State
+PKCE
+OpenID Connect
+Account linking
+Practice
+
+Complete additional PortSwigger OAuth labs.
+
+DAY 84 — GraphQL
+Resource
+
+PortSwigger GraphQL
+
+Learn
+Query
+Mutation
+Schema
+Introspection
+Practice
+
+Use GraphQL lab.
+
+DAY 85 — GraphQL Authorization
+Learn
+Field authorization
+Object authorization
+Hidden fields
+Introspection
+Practice
+
+Test GraphQL requests in Burp.
+
+DAY 86 — WebSockets
+Resource
+
+PortSwigger WebSockets
+
+Learn
+WebSocket handshake
+ws
+wss
+Messages
+Practice
+
+Capture WebSocket traffic in Burp.
+
+DAY 87 — SSRF Fundamentals
+Resource
+
+PortSwigger SSRF
+
+Lab
+
+Basic SSRF against the local server
+
+Learn
+User
+ ↓
+Server
+ ↓
+Internal service
+DAY 88 — SSRF Filters
+Labs
+
+SSRF with blacklist-based input filter
+
+SSRF with whitelist-based input filter
+
+Test
+
+Why are SSRF filters difficult to implement correctly?
+
+DAY 89 — Blind SSRF
+Lab
+
+Blind SSRF with out-of-band detection
+
+Learn
+OAST
+Burp Collaborator
+Blind vulnerabilities
+DAY 90 — PHASE 3 EXAM
+
+Do a PortSwigger:
+
+Mystery Lab
+
+Then write a mini recon report:
+
+Target
+Assets
+Endpoints
+Technologies
+Interesting functionality
+Potential attack surfaces
+🔴 PHASE 4 — DAYS 91–120
+Advanced Testing + Real Bug-Bounty Workflow
+DAY 91 — Business Logic
+Resource
+
+PortSwigger Business Logic
+
+Learn
+
+Ask:
+
+What assumptions does the application make about the user?
+
+Practice
+
+Analyze:
+
+Shopping
+Coupons
+Payments
+Account changes
+
+in labs.
+
+DAY 92 — Business Logic Abuse
+Practice
+
+Look for:
+
+Skip step
+Repeat step
+Change order
+Change quantity
+Change price
+Reuse token
+Test
+
+Why are business-logic bugs difficult for automated scanners?
+
+DAY 93 — Race Conditions
+Resource
+
+PortSwigger Race Conditions
+
+Lab
+
+Limit overrun race conditions
+
+DAY 94 — Race Conditions II
+Lab
+
+Multi-endpoint race conditions
+
+Learn
+Request A
++
+Request B
++
+Same race window
+=
+Unexpected state
+DAY 95 — Race Conditions III
+Labs
+
+Single-endpoint race conditions
+
+Partial construction race conditions
+
+DAY 96 — NoSQL Injection
+Resource
+
+PortSwigger NoSQL Injection
+
+Learn
+MongoDB
+JSON queries
+Operators
+Authentication logic
+Practice
+
+Complete the Apprentice NoSQL labs.
+
+DAY 97 — XXE
+Resource
+
+PortSwigger XXE
+
+Learn
+XML
+DTD
+External entities
+File disclosure
+SSRF through XXE
+Practice
+
+Complete basic XXE lab.
+
+DAY 98 — Command Injection
+Resource
+
+PortSwigger OS Command Injection
+
+Learn
+Shell
+Command injection
+Blind command injection
+Practice
+
+Complete Apprentice labs.
+
+DAY 99 — Information Disclosure
+Resource
+
+PortSwigger Information Disclosure
+
+Look for
+Debug information
+Stack traces
+Comments
+Backup files
+Source maps
+Internal URLs
+Credentials/secrets
+Practice
+
+Complete Apprentice information-disclosure labs.
+
+DAY 100 — Host Header Attacks
+Resource
+
+PortSwigger Host Header Attacks
+
+Learn
+Host header
+Password reset poisoning
+Routing
+Virtual hosts
+Practice
+
+Complete beginner lab.
+
+DAY 101 — Web Cache
+Learn
+Cache
+Cache key
+CDN
+Headers
+Resource
+
+PortSwigger Web Cache Poisoning
+
+Practice
+
+Complete basic cache-poisoning lab.
+
+DAY 102 — Web Cache Deception
+Resource
+
+PortSwigger Web Cache Deception
+
+Practice
+
+Complete beginner lab.
+
+DAY 103 — Prototype Pollution
+Resource
+
+PortSwigger Prototype Pollution
+
+Learn
+JavaScript prototypes
+Object inheritance
+Client-side prototype pollution
+Server-side prototype pollution
+Practice
+
+Complete beginner prototype-pollution labs.
+
+DAY 104 — HTTP Request Smuggling
+Resource
+
+PortSwigger HTTP Request Smuggling
+
+Learn
+Content-Length
+Transfer-Encoding
+Front-end
+Back-end
+Desynchronization
+Practice
+
+Complete beginner request-smuggling lab.
+
+DAY 105 — Web LLM Security
+Resource
+
+PortSwigger Web LLM Attacks
+
+Learn
+Prompt injection
+Tool abuse
+Excessive agency
+Data exposure
+
+PortSwigger currently lists Web LLM attacks among its active Academy topics.
+
+DAY 106 — OWASP WSTG
+
+Now stop learning individual vulnerabilities.
+
+Start learning methodology.
+
+Resource
+
+OWASP WSTG
+
+Study:
+
+Information Gathering
+Configuration
+Identity
+Authentication
+Authorization
+Session Management
+Input Validation
+Business Logic
+Client-Side Testing
+API Testing
+DAY 107 — Build Your Testing Checklist
+
+Create your own:
+
+BUG BOUNTY CHECKLIST
+
+with:
+
+Recon
+☐ Subdomains
+☐ DNS
+☐ Live hosts
+☐ URLs
+☐ JS
+☐ APIs
+Authentication
+☐ Login
+☐ Registration
+☐ Password reset
+☐ MFA
+☐ Sessions
+Authorization
+☐ IDOR
+☐ BOLA
+☐ BFLA
+☐ Privilege escalation
+Input
+☐ XSS
+☐ SQLi
+☐ Command Injection
+☐ Path Traversal
+☐ SSRF
+☐ XXE
+DAY 108 — Read Real Reports
+Resource
+
+HackerOne Hacktivity
+
+Read 10 disclosed reports.
+
+For each:
+
+Target
+Vulnerability
+Initial observation
+Testing process
+Impact
+Proof
+Severity
+Fix
+DAY 109 — Read 10 More Reports
+
+Focus specifically on:
+
+IDOR
+BOLA
+Business Logic
+Authentication
+Goal
+
+Understand how researchers think.
+
+DAY 110 — Vulnerability Chaining
+
+Learn how vulnerabilities combine.
+
+Examples:
+
+XSS
+ ↓
+Account takeover
+
+IDOR
+ ↓
+Sensitive information
+ ↓
+Account takeover
+
+SSRF
+ ↓
+Internal service
+ ↓
+Sensitive data
+
+Information disclosure
+ ↓
+Credentials
+ ↓
+Authorization bypass
+Practice
+
+Study 5 real disclosed reports involving chains.
+
+DAY 111 — Target Selection
+
+Learn how to choose a bounty program.
+
+Look for:
+
+Large attack surface
+APIs
+Modern web application
+Clear scope
+Good disclosure policy
+Safe harbor
+Rule
+
+Don't choose a program simply because it has the biggest bounty.
+
+DAY 112 — Read Scope Carefully
+
+Before touching a target, identify:
+
+In scope
+Out of scope
+Rate limits
+Prohibited testing
+Authentication requirements
+Third-party systems
+Data restrictions
+Automation rules
+
+This is mandatory.
+
+DAY 113 — First Authorized Recon
+
+Pick one explicitly authorized program.
+
+Build:
+
+domains.txt
+subdomains.txt
+live.txt
+urls.txt
+js.txt
+api.txt
+
+Don't attack anything yet.
+
+DAY 114 — Manual Testing
+
+Take one application.
+
+Test:
+
+Authentication
+Authorization
+IDOR
+XSS
+CSRF
+API
+
+Manually.
+
+Goal
+
+Find one interesting behavior, not necessarily a vulnerability.
+
+DAY 115 — Deep Testing
+
+Take the interesting behavior.
+
+Ask:
+
+Can I reproduce it?
+Is it security-relevant?
+Can another user be affected?
+What privilege is required?
+What is the impact?
+DAY 116 — Vulnerability Validation
+
+Before reporting:
+
+Reproduce
+ ↓
+Minimize
+ ↓
+Confirm
+ ↓
+Document
+ ↓
+Stop
+
+Don't unnecessarily access real user information.
+
+DAY 117 — Report Writing
+
+A good report should contain:
+
+Title
+
+Summary
+
+Steps to reproduce
+
+Expected behavior
+
+Actual behavior
+
+Impact
+
+Evidence
+
+Suggested remediation
+Practice
+
+Write one hypothetical report based on a PortSwigger lab.
+
+DAY 118 — Report Quality
+
+Take your report and ask:
+
+Can another researcher reproduce this?
+
+Did I explain the impact?
+
+Did I include the exact endpoint?
+
+Did I avoid unnecessary sensitive data?
+
+Did I explain why this is a security issue?
+DAY 119 — Final Mystery Challenge
+
+Use PortSwigger's Mystery Lab Challenge.
+
+Do not look at the vulnerability category.
+
+The current Academy specifically provides mystery labs to test recon and analysis skills.
+
+Rules
+
+Give yourself:
+
+90 minutes.
+
+No solutions.
+
+No Google.
+
+You can use:
+
+Burp
+Academy documentation
+Your own notes
+DAY 120 — FINAL BUG BOUNTY EXAM 🏆
+
+This is your graduation day.
+
+You need to complete five tasks.
+
+Task 1 — Recon
+
+Take an authorized target/lab and map:
+
+Domains
+Subdomains
+Endpoints
+APIs
+Technologies
+Task 2 — Authentication
+
+Identify authentication attack surfaces.
+
+Task 3 — Authorization
+
+Test:
+
+User A
+User B
+Admin
+
+where the environment permits it.
+
+Task 4 — Input Validation
+
+Test:
+
+XSS
+SQLi
+Path Traversal
+SSRF
+
+using authorized labs.
+
+Task 5 — Report
+
+Write a professional vulnerability report.
+
+📊 Your 120-Day Targets
+
+Don't measure yourself only by "days completed."
+
+Use these targets.
+
+Skill	Target
+HTTP requests analyzed	500+
+Burp Repeater requests	300+
+SQLi labs	10+
+XSS labs	15+
+Authentication labs	10+
+Access-control labs	10+
+CSRF labs	5+
+CORS labs	3+
+File-upload labs	5+
+SSRF labs	5+
+API labs	10+
+JWT labs	3+
+OAuth labs	3+
+Race-condition labs	3+
+Mystery labs	10+
+Real disclosed reports studied	50+
+Professional reports written	5+
+
+PortSwigger currently has 30 XSS labs, 16 SQLi labs, 12 CSRF labs, 9 XXE labs and additional labs for API testing, race conditions, Web LLM attacks, NoSQL, GraphQL, etc., so you have plenty of hands-on material beyond the minimum above.
+
+🔥 The most important rule for your 120 days
+
+Don't do this:
+
+Watch YouTube → copy payload → solve lab → next topic.
+
+Do this:
+
+                 THEORY
+                    ↓
+              UNDERSTAND WHY
+                    ↓
+              BURP REQUEST
+                    ↓
+             FORM A HYPOTHESIS
+                    ↓
+                TEST IT
+                    ↓
+             ANALYZE RESPONSE
+                    ↓
+             SOLVE THE LAB
+                    ↓
+              WRITE NOTES
+                    ↓
+          TRY AGAIN WITHOUT HELP
+                    ↓
+             MYSTERY LAB
+                    ↓
+        AUTHORIZED REAL TARGET
+
+That is how you'll transition from "I know XSS" to "I can actually hunt for XSS."
+
+📚 Your permanent resource library
+
+Bookmark these six pages rather than collecting hundreds of random resources:
+
+PortSwigger Web Security Academy
+PortSwigger All Labs
+PortSwigger All Topics
+OWASP Web Security Testing Guide
+OWASP API Security
+HackerOne Hacktivity
+
+PortSwigger's current guidance is also useful as a benchmark: after completing practitioner-level labs, they recommend solving mystery labs without knowing the vulnerability type.
+
+One more thing
+
+Do not rush to Day 120. If Day 37 takes you three days, that's fine. Your real goal after 120 days should be:
+
+"Give me an authorized web application and I can systematically map its attack surface, understand its requests, form hypotheses, test them with Burp, validate vulnerabilities, assess impact, and write a professional report."
+
+That is a much more valuable goal than simply saying "I completed 120 days of bug-bounty study."
