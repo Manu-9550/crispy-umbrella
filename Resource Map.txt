@@ -1,0 +1,1012 @@
+Complete Bug Bounty Resource Map
+
+Use this as your master syllabus for the next 3–4 months.
+
+0. First understand how the Internet works
+Learn
+Internet basics
+Client vs server
+IP addresses
+DNS
+Domain/subdomain
+Ports
+TCP/UDP
+HTTP/HTTPS
+TLS/SSL
+Request/response
+HTTP methods
+HTTP headers
+Status codes
+URL structure
+Query parameters
+Request body
+JSON
+Cookies
+Sessions
+Browser DevTools
+Best resources
+
+1. MDN Web Docs — HTTP
+
+MDN HTTP overview
+
+2. MDN — HTTP messages
+
+HTTP messages
+
+3. MDN — HTTP methods
+
+HTTP request methods
+
+Practice
+
+Open Chrome → DevTools → Network.
+
+Visit websites you own or use normal public pages and identify:
+
+GET /products
+POST /login
+GET /api/products/123
+
+Learn to identify:
+
+Method
+URL
+Headers
+Cookies
+Parameters
+Request body
+Response
+Status code
+
+Do not start bug hunting before you understand this.
+
+1. HTML
+Learn
+HTML structure
+Forms
+Inputs
+Attributes
+Links
+JavaScript inclusion
+DOM
+User-controlled input
+Resource
+
+MDN HTML learning area
+
+Practice
+
+Build a small page containing:
+
+<form>
+<input>
+<textarea>
+<button>
+</form>
+
+Understand where user input goes.
+
+2. JavaScript
+
+You don't need to become a professional JavaScript developer.
+
+You need enough JavaScript to understand web applications.
+
+Learn
+Variables
+Functions
+Objects
+Arrays
+DOM
+Events
+Fetch
+JSON
+Promises
+Async/await
+LocalStorage
+SessionStorage
+Cookies
+JavaScript source files
+API calls
+Resource
+
+MDN JavaScript Guide
+
+Practice
+
+Open a website's JavaScript files and identify:
+
+API endpoints
+URLs
+parameters
+tokens
+feature flags
+interesting functions
+
+This becomes extremely important during recon.
+
+3. Linux
+
+You don't need to become a Linux administrator.
+
+Learn the commands used in security testing.
+
+Learn
+pwd
+ls
+cd
+mkdir
+touch
+cat
+less
+grep
+find
+head
+tail
+sort
+uniq
+cut
+awk
+sed
+curl
+wget
+ssh
+chmod
+ps
+kill
+
+Also learn:
+
+pipes
+redirection
+environment variables
+package managers
+Bash basics
+Resource
+
+Linux Journey
+
+Practice
+
+Use:
+
+Kali Linux
+Ubuntu
+or a VM
+
+Don't worry about installing 50 security tools yet.
+
+4. Networking
+Learn
+IPv4
+IPv6 basics
+TCP
+UDP
+DNS
+DHCP
+NAT
+Routers
+Firewalls
+Ports
+Proxies
+Reverse proxies
+CDN
+Load balancers
+Resource
+
+Cloudflare Learning Center
+
+For DNS:
+
+Cloudflare DNS learning resources
+
+Practice
+
+Use:
+
+ping
+nslookup
+dig
+curl
+traceroute
+
+Understand what happens when you type:
+
+https://example.com
+
+into a browser.
+
+5. Burp Suite
+
+This is one of the most important skills in bug bounty.
+
+Don't just watch tutorials.
+
+Actually use Burp.
+
+Learn
+Proxy
+HTTP history
+Repeater
+Intruder
+Decoder
+Comparer
+Inspector
+Scope
+Match/replace
+Extensions
+Site map
+Best resource
+
+PortSwigger Burp Suite Academy tutorials
+
+PortSwigger specifically provides tutorials for intercepting requests, Repeater and the Burp interface.
+
+Practice
+
+Your first goal:
+
+See a request → intercept it → modify it → resend it → understand the response.
+
+Do this hundreds of times in labs.
+
+6. SQL Injection
+
+Now start serious vulnerability learning.
+
+Learn
+SQL basics
+SELECT
+WHERE
+AND/OR
+UNION
+comments
+authentication bypass concepts
+error-based SQLi
+blind SQLi
+time-based SQLi
+database differences
+Main resource
+
+PortSwigger SQL Injection labs
+
+PortSwigger currently has a substantial SQLi lab set and recommends SQL injection as one of its beginner server-side topics.
+
+Practice target
+
+Don't memorize:
+
+' OR 1=1--
+
+Instead ask:
+
+Where does my input reach the database?
+
+That mindset is much more important.
+
+7. Authentication
+
+Extremely important for bug bounty.
+
+Learn
+Login
+Registration
+Password reset
+MFA
+OTP
+Remember me
+Session handling
+Account recovery
+Authentication logic
+Brute-force protection
+Session fixation
+Credential handling
+Resource
+
+PortSwigger Authentication labs
+
+Practice
+
+Create two accounts in authorized labs:
+
+User A
+User B
+
+Then understand how the application distinguishes them.
+
+8. Authorization / IDOR / BOLA
+
+Make this one of your strongest skills.
+
+This is particularly important because modern applications and APIs frequently expose object identifiers. OWASP's API Security Top 10 places Broken Object Level Authorization at API1.
+
+Learn
+Authentication vs authorization
+Horizontal privilege escalation
+Vertical privilege escalation
+IDOR
+BOLA
+Object IDs
+Role-based access
+Function-level authorization
+API authorization
+Resource
+
+PortSwigger Access Control labs
+
+Practice
+
+Think:
+
+User A
+   ↓
+/api/orders/1001
+
+What happens if User A requests:
+
+/api/orders/1002
+
+You must learn to test authorization safely in labs or explicitly authorized programs.
+
+9. XSS
+Learn
+Reflected XSS
+Stored XSS
+DOM XSS
+HTML context
+Attribute context
+JavaScript context
+Encoding
+Filters
+CSP
+XSS impact
+Resource
+
+PortSwigger XSS labs
+
+PortSwigger currently lists 30 XSS labs, making it one of the larger hands-on topic sets.
+
+Practice
+
+Don't only learn payloads.
+
+Understand:
+
+Input
+ ↓
+Application
+ ↓
+HTML/JS
+ ↓
+Browser
+
+and exactly where your input is reflected.
+
+10. CSRF
+Learn
+What CSRF is
+Cookies
+SameSite
+CSRF tokens
+Origin
+Referer
+GET vs POST
+Login CSRF
+CSRF defenses
+Resource
+
+PortSwigger CSRF labs
+
+11. CORS
+Learn
+Same-origin policy
+Origin
+Access-Control-Allow-Origin
+Credentials
+Preflight
+OPTIONS
+Misconfigured CORS
+Resource
+
+MDN CORS
+
+Then:
+
+PortSwigger CORS labs
+
+12. Path Traversal
+Learn
+File paths
+Relative paths
+Absolute paths
+../
+URL encoding
+Double encoding
+Path normalization
+Resource
+
+PortSwigger Path Traversal labs
+
+13. File Upload Vulnerabilities
+Learn
+File extension validation
+MIME type
+Content-Type
+Filename validation
+Server-side validation
+Image upload
+Web shells conceptually
+File overwrite
+Path traversal through uploads
+Resource
+
+PortSwigger File Upload labs
+
+Practice only in labs/authorized environments.
+
+14. Command Injection
+Learn
+OS commands
+Shell
+Command separators
+Blind command injection
+Output-based command injection
+Input sanitization
+Resource
+
+PortSwigger OS Command Injection labs
+
+15. SSRF
+
+Very important advanced vulnerability.
+
+Learn
+Server-side requests
+Internal services
+URL parsing
+localhost
+internal networks
+cloud metadata concepts
+SSRF filters
+SSRF through APIs/webhooks
+Resource
+
+PortSwigger SSRF labs
+
+OWASP also includes SSRF as API7 in its API Security Top 10.
+
+16. XXE
+Learn
+XML
+XML entities
+DTD
+External entities
+File disclosure concepts
+SSRF through XXE
+Resource
+
+PortSwigger XXE labs
+
+17. Business Logic Vulnerabilities
+
+Very important for actual bug bounty hunting.
+
+Learn
+Workflow manipulation
+Price manipulation
+Coupon abuse
+Race conditions
+Trust assumptions
+Negative quantities
+Reusing functions
+Skipping steps
+Privilege workflow issues
+Resource
+
+PortSwigger Business Logic labs
+
+Practice mindset
+
+Ask:
+
+"What does the developer assume the user will never do?"
+
+That question can lead to excellent findings.
+
+18. Information Disclosure
+Learn
+Debug information
+Stack traces
+Source maps
+Comments
+Backup files
+Error messages
+API responses
+Credentials/secrets exposure
+Internal URLs
+Resource
+
+PortSwigger Information Disclosure labs
+
+19. Race Conditions
+Learn
+Concurrent requests
+Race windows
+TOCTOU
+Limit bypass
+Duplicate transactions
+Coupon/credit manipulation concepts
+Resource
+
+PortSwigger Race Conditions labs
+
+20. NoSQL Injection
+
+After SQLi.
+
+Learn
+MongoDB basics
+JSON queries
+Operators
+Authentication bypass concepts
+Query manipulation
+Resource
+
+PortSwigger NoSQL Injection labs
+
+21. API Security
+
+This should become a major specialization for you.
+
+Learn
+REST
+JSON
+API endpoints
+HTTP methods
+API authentication
+API authorization
+API versioning
+Rate limiting
+Mass assignment
+Excessive data exposure
+BOLA
+BFLA
+SSRF
+API inventory
+Third-party API risks
+Main resource
+
+OWASP API Security Top 10
+
+The current OWASP API Security Top 10 page covers the 2023 risks including BOLA, broken authentication, object-property authorization, resource consumption, function-level authorization, sensitive business flows, SSRF, misconfiguration, inventory management and unsafe API consumption.
+
+Then:
+
+PortSwigger API Testing labs
+
+22. JWT
+Learn
+JWT structure
+Header
+Payload
+Signature
+Signing algorithms
+Token manipulation
+Weak secret concepts
+Algorithm confusion concepts
+Authentication/authorization with JWT
+Resource
+
+PortSwigger JWT attacks labs
+
+23. OAuth 2.0
+Learn
+OAuth concepts
+Authorization server
+Resource server
+Client
+Redirect URI
+Authorization code
+Access token
+State
+PKCE
+OAuth implementation mistakes
+Resource
+
+PortSwigger OAuth authentication labs
+
+24. WebSockets
+Learn
+WebSocket handshake
+ws/wss
+Messages
+Authentication
+Authorization
+WebSocket manipulation
+Resource
+
+PortSwigger WebSockets labs
+
+25. GraphQL
+Learn
+Queries
+Mutations
+Schema
+Introspection
+Authorization
+Information disclosure
+Query manipulation
+Resource
+
+PortSwigger GraphQL API testing
+
+26. Reconnaissance
+
+Only start serious recon after you understand web vulnerabilities.
+
+Learn
+Asset discovery
+Subdomains
+DNS
+Certificate transparency
+Historical URLs
+JavaScript discovery
+API discovery
+Technology identification
+Endpoint discovery
+Parameters
+OWASP methodology
+
+The WSTG currently covers information gathering, configuration, identity, authentication, authorization, sessions, input validation, business logic, client-side testing and API testing.
+
+OWASP Web Security Testing Guide
+
+Tools to eventually learn
+subfinder
+amass
+dnsx
+httpx
+waybackurls
+gau
+katana
+ffuf
+nuclei
+
+Don't learn all of these at once.
+
+Learn what problem each tool solves first.
+
+27. JavaScript Recon
+
+This is one of the skills I would strongly recommend.
+
+Learn
+
+Search JavaScript for:
+
+/api/
+/graphql
+/admin
+/internal
+/debug
+/token
+/auth
+/user
+
+Look for:
+
+endpoints
+API routes
+parameters
+secrets
+environment variables
+feature flags
+hidden functionality
+Practice
+
+Take JavaScript from your own applications/labs and manually analyze it.
+
+Then automate repetitive searches.
+
+28. Content Discovery
+Learn
+Directory discovery
+Endpoint discovery
+Parameter discovery
+Wordlists
+Fuzzing concepts
+HTTP status codes
+Response size
+False positives
+Tool
+
+ffuf
+
+Resource:
+
+ffuf GitHub documentation
+
+Practice against intentionally vulnerable labs, not random websites.
+
+29. Fuzzing
+Learn
+What fuzzing means
+Wordlists
+Parameter fuzzing
+Directory fuzzing
+Input fuzzing
+Response analysis
+Rate limits
+Resource
+
+OWASP WSTG has a dedicated fuzzing appendix.
+
+30. Burp Extensions
+
+Only after you're comfortable with Burp.
+
+Learn:
+
+BApp Store
+Logger
+Autorize
+Param Miner
+Turbo Intruder
+
+But remember:
+
+Extensions should improve your thinking, not replace it.
+
+31. Web Cache Poisoning / Cache Deception
+
+Advanced topic.
+
+Learn
+CDN
+Cache
+Cache key
+Headers
+Cache poisoning
+Cache deception
+Resource
+
+PortSwigger Web Cache Poisoning
+
+PortSwigger Web Cache Deception
+
+32. HTTP Request Smuggling
+
+Advanced.
+
+Learn
+Content-Length
+Transfer-Encoding
+HTTP/1.1
+Front-end/back-end servers
+CL.TE
+TE.CL
+TE.TE
+Desynchronization
+Resource
+
+PortSwigger HTTP Request Smuggling
+
+Don't study this in Month 1.
+
+33. Web LLM Attacks
+
+This is a newer area worth learning after your fundamentals.
+
+PortSwigger now includes Web LLM attacks among its current Web Security Academy topics.
+
+Learn
+Prompt injection
+LLM-integrated applications
+Tool abuse
+Indirect prompt injection
+Excessive agency
+Data exposure
+Resource
+
+PortSwigger Web LLM attacks
+
+34. OWASP WSTG — Your Testing Bible
+
+Don't try to read it cover-to-cover initially.
+
+Use it as your testing checklist.
+
+The WSTG's current structure covers the full web application testing process, including information gathering, configuration, authentication, authorization, session management, input validation, business logic, client-side and API testing.
+
+OWASP WSTG Latest
+
+Use it like:
+
+Learn vulnerability
+        ↓
+PortSwigger labs
+        ↓
+OWASP WSTG
+        ↓
+Understand how professionals test it
+        ↓
+Authorized bug bounty
+35. Real Bug Bounty Learning
+
+Once you've completed the fundamentals, study real reports.
+
+HackerOne
+
+HackerOne Hacktivity
+
+Study reports and ask:
+
+How did they find it?
+
+What was the initial observation?
+
+What assumption was broken?
+
+What request did they modify?
+
+What was the impact?
+
+How did they prove it?
+
+Why was it accepted?
+
+Don't just copy payloads.
+
+🧠 Your actual learning order
+
+This is the part I want you to follow carefully.
+
+Month 1
+Internet
+ ↓
+HTTP
+ ↓
+HTML
+ ↓
+JavaScript basics
+ ↓
+Cookies & Sessions
+ ↓
+Linux
+ ↓
+Networking
+ ↓
+Burp Suite
+ ↓
+SQL basics
+
+Then start:
+
+SQL Injection
+Authentication
+Access Control
+Month 2
+IDOR/BOLA
+Authentication
+Authorization
+XSS
+CSRF
+CORS
+Path Traversal
+File Upload
+Command Injection
+Information Disclosure
+Business Logic
+
+PortSwigger should be your primary hands-on platform. Its current Academy provides learning paths plus interactive labs for these topics.
+
+Month 3
+Recon
+ ↓
+Subdomains
+ ↓
+JavaScript Recon
+ ↓
+API Security
+ ↓
+JWT
+ ↓
+OAuth
+ ↓
+GraphQL
+ ↓
+WebSockets
+ ↓
+SSRF
+ ↓
+Race Conditions
+ ↓
+NoSQL
+ ↓
+XXE
+Month 4
+Real bug bounty methodology
+        ↓
+Target selection
+        ↓
+Scope reading
+        ↓
+Recon
+        ↓
+Manual testing
+        ↓
+Automation
+        ↓
+Vulnerability chaining
+        ↓
+Impact assessment
+        ↓
+Report writing
+        ↓
+Responsible disclosure
+⭐ Your 5 most important resources
+
+If you feel overwhelmed by the number of links, start with these five:
+
+1. PortSwigger Web Security Academy
+
+PortSwigger Web Security Academy
+
+Your #1 resource.
+
+It combines explanations with hands-on labs and is continuously updated.
+
+2. OWASP WSTG
+
+OWASP Web Security Testing Guide
+
+Your testing methodology/reference.
+
+3. OWASP API Security
+
+OWASP API Security Top 10
+
+Your API-security reference.
+
+4. MDN
+
+MDN Web Docs
+
+Your web-development fundamentals reference.
+
+5. HackerOne Hacktivity
+
+HackerOne Hacktivity
+
+Your real-world report study resource.
+
+⚠️ One important change to your original plan
+
+Don't try to finish every vulnerability in existence in 3–4 months.
+
+Your first target should be:
+
+Become extremely good at understanding HTTP requests and manually testing web applications.
+
+For example, if you see:
+
+GET /api/order/83921 HTTP/1.1
+Host: target.example
+Cookie: session=...
+
+you should automatically start thinking:
+
+Authentication?
+Authorization?
+Can I access another object's data?
+Can I change HTTP method?
+Can I modify parameters?
+Is there another API endpoint?
+What happens without the cookie?
+What happens with another authorized account?
+Does the frontend expose additional functionality?
+
+That thinking is what turns you into a bug hunter.
+
+And don't test random real websites. For the real-bounty stage, use only programs whose scope explicitly authorizes your testing; OWASP WSTG is designed around professional web-security testing methodology.
