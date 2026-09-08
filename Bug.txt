@@ -1,0 +1,172 @@
+Bug Bounty Hunting — 4 Month Roadmap
+
+A practical, concept-by-concept path from zero to submitting your first real bug bounty reports. Built around daily consistency (1.5–3 hrs/day) rather than binge-learning.
+
+General rule for every topic below: learn the concept → watch/read one resource → immediately practice it in a lab. Don't stack theory for weeks without hands-on time.
+
+Month 1 — Foundations (Networking, Web, Linux, Basic Coding)
+
+Goal: understand how the web actually works before attacking it. Most beginners skip this and get stuck later.
+
+Week 1: Networking & Linux Basics
+Concepts: OSI model, TCP/IP, DNS, HTTP/HTTPS, ports, proxies, VPNs, cookies/sessions
+Concepts: Linux fundamentals — filesystem, permissions, bash basics, package managers, SSH
+Resources:
+TryHackMe "Pre Security" & "Complete Beginner" learning paths (free tier covers this)
+Professor Messer's Network+ videos (YouTube, free) for networking depth
+"Linux Journey" (linuxjourney.com, free)
+Practice: Set up Kali Linux (or Parrot OS) in a VM (VirtualBox/VMware). Get comfortable navigating purely via terminal for a few days.
+Week 2: How the Web Works
+Concepts: Client-server model, HTTP methods (GET/POST/PUT/DELETE), status codes, headers, cookies, sessions vs tokens, same-origin policy, CORS basics
+Concepts: HTML/CSS basics (just enough to read source code), JavaScript basics (variables, functions, DOM, fetch/XHR)
+Resources:
+MDN Web Docs — HTTP overview, JavaScript basics (developer.mozilla.org)
+freeCodeCamp's JavaScript basics module (free)
+Practice: Open browser DevTools on 5 different websites daily. Inspect Network tab, look at requests/responses, cookies, headers.
+Week 3: Setting Up Your Toolkit
+Concepts: Intercepting proxies, how Burp Suite works, request/response manipulation
+Tools to install:
+Burp Suite Community Edition (free) — your main tool for the entire journey
+FoxyProxy (browser extension to route traffic through Burp)
+Nmap, ffuf or gobuster (for fuzzing/directory brute-forcing), Nuclei
+Resources:
+PortSwigger's free "Burp Suite Essentials" learning material (portswigger.net/burp/documentation)
+Practice: Intercept and modify a request on a test site using Burp's Proxy + Repeater tabs. Get muscle memory for Intercept, Repeater, and Intruder.
+Week 4: OWASP Top 10 — The Map of What You're Hunting For
+Concepts: Get a conceptual overview (not deep yet) of all 10: Broken Access Control, Cryptographic Failures, Injection, Insecure Design, Security Misconfiguration, Vulnerable Components, Auth Failures, Data Integrity Failures, Logging Failures, SSRF
+Resources:
+owasp.org/Top10 (free, official)
+PortSwigger Web Security Academy — create a free account now, you'll live here for months
+Practice: For each OWASP category, write 2–3 sentences in your own words describing what it means. This forces real understanding over memorization.
+
+End of Month 1 checkpoint: You should be able to explain HTTP request/response cycles, intercept traffic with Burp, and name all OWASP Top 10 categories with a one-line description each.
+
+Month 2 — Core Vulnerability Classes (The Real Meat)
+
+Goal: deeply learn each vulnerability type — how it works, how to find it, how to exploit it, how to fix it. This is the highest-leverage month.
+
+Work through PortSwigger Web Security Academy (100% free, industry gold standard) topic by topic. For each, do: read the material → do every lab in that section → write a short personal note on the bug's root cause.
+
+Week 5: Injection Attacks
+SQL Injection — in-band, blind (boolean/time-based), UNION-based, second-order
+Command Injection
+Resources: PortSwigger SQLi + Command Injection modules; SQLMap tool (learn manual first, tool second)
+Practice: All SQLi labs on PortSwigger Academy (~15 labs)
+Week 6: Cross-Site Scripting & Client-Side Attacks
+Reflected XSS, Stored XSS, DOM-based XSS
+CSRF (Cross-Site Request Forgery)
+Clickjacking
+Resources: PortSwigger XSS + CSRF + Clickjacking modules
+Practice: All XSS labs (~25 labs, they're the most numerous — don't rush). Build 1 CSRF PoC HTML page manually.
+Week 7: Access Control & Business Logic
+IDOR (Insecure Direct Object Reference)
+Broken Access Control / Privilege Escalation
+Business logic vulnerabilities (often the highest-paying, least automatable bugs)
+Resources: PortSwigger Access Control + Business Logic modules
+Practice: All labs in both sections. This category is where real bug bounty money is made — spend extra time here.
+Week 8: Server-Side & Advanced Topics
+SSRF (Server-Side Request Forgery)
+XXE (XML External Entity)
+Insecure Deserialization
+Authentication vulnerabilities (weak login flows, password reset flaws, 2FA bypass, JWT attacks)
+API-specific vulnerabilities (broken object level authorization, mass assignment, rate limiting issues)
+Resources: PortSwigger SSRF, XXE, Deserialization, Authentication, JWT modules; "hacktricks.wiki" as a reference wiki throughout
+Practice: All labs in each section. This week is dense — it's fine to spill into Week 9 if needed.
+
+End of Month 2 checkpoint: You should have completed 100+ PortSwigger Academy labs and be able to independently identify and exploit each vulnerability class without hints.
+
+Month 3 — Reconnaissance, Automation & Simulated Real-World Practice
+
+Goal: shift from "solving labs" to "finding bugs in messy, unstructured targets" — the actual bug bounty skill.
+
+Week 9: Recon Methodology
+Concepts: Subdomain enumeration, asset discovery, content discovery, technology fingerprinting, JS file analysis for hidden endpoints/secrets
+Tools: Subfinder, Amass, httpx, ffuf/gobuster, Wappalyzer, waybackurls, gau, JSFinder/LinkFinder
+Resources:
+"The Bug Hunter's Methodology" talks by Jason Haddix (YouTube, free) — considered essential viewing
+NahamSec's recon videos (YouTube, free)
+Practice: Pick a program's public scope (see Month 4) and run a full recon pass just for practice — subdomains, live hosts, tech stack — without hunting bugs yet.
+Week 10–11: Practice Platforms (Simulate Real Targets)
+TryHackMe — "Offensive Pentesting" path or web-focused rooms
+HackTheBox — start with easy web-focused machines
+PentesterLab — Pro subscription is worth it for real-world-style web app exercises (~$20/month)
+VulnHub / DVWA / OWASP Juice Shop — free, deliberately vulnerable apps to practice full workflows on
+Practice: Do at least 3–4 full boxes/apps per week combining recon + all vulnerability classes learned. Time yourself — simulate real conditions.
+Week 12: Read Real Reports & Learn Reporting
+Concepts: How to write a clear, reproducible vulnerability report (steps to reproduce, impact, PoC, CVSS-style severity reasoning)
+Resources:
+HackerOne Hacktivity (hackerone.com/hacktivity) — read 50+ disclosed real reports, note patterns
+Bugcrowd's disclosed reports
+Peter Yaworski's book "Real-World Bug Hunting: A Field Guide to Web Hacking" (excellent, based on real disclosed reports)
+Practice: Write 2–3 mock reports based on bugs you found in Month 3 labs, as if submitting them for real. Focus on clarity and impact explanation — this skill directly affects your payout and reputation.
+
+End of Month 3 checkpoint: You can run recon on a new target independently, chain vulnerability classes together, and write a clean, professional report.
+
+Month 4 — Real Hunting
+
+Goal: submit your first real reports on live bug bounty programs.
+
+Week 13: Choosing Programs & Scope Discipline
+Platforms: HackerOne, Bugcrowd, Intigriti, YesWeHack
+Concepts: Reading scope documents carefully, understanding out-of-scope rules, responsible disclosure, program rules of engagement
+Practice: Start with programs that have VDPs (Vulnerability Disclosure Programs) or low-competition public programs rather than jumping straight into high-profile paid programs — less competition, faster learning loop, still counts as real experience.
+Week 14–15: Active Hunting Loop
+Daily loop: recon → map attack surface → test each area for OWASP Top 10 + business logic issues → verify → document
+Focus areas that convert well for beginners: IDOR, broken access control, misconfigured auth flows, subdomain takeovers, information disclosure in JS files, rate-limiting gaps
+Resources to keep alongside hunting:
+hacktricks.wiki as a live reference
+InsiderPhD and STÖK (YouTube) for live-hacking style walkthroughs
+Twitter/X bug bounty community (follow hashtags like #bugbounty, #infosec) for fresh techniques and disclosed writeups
+Practice: Aim for at least 1 submitted report per week, even if it gets marked informative/duplicate — the goal is reps, not perfection.
+Week 16: Review, Refine, Specialize
+Review every report you submitted — what got accepted, what got rejected, why
+Pick 1–2 vulnerability classes you're naturally strongest at (e.g., IDOR/access control, or XSS, or recon-heavy subdomain takeovers) and start specializing — most successful hunters have a "signature" bug class
+Join a bug bounty Discord/community for peer learning and collaboration (e.g., Bug Bounty Forum, InfoSec Prep)
+Set your Month 5+ goals: deeper specialization (e.g., mobile app pentesting, API security, cloud misconfigurations)
+
+End of Month 4 checkpoint: You've submitted multiple real reports, have at least one accepted/triaged finding, and know which vulnerability class you want to specialize in going forward.
+
+Core Resource List (Reference)
+
+Free — Core Learning
+
+PortSwigger Web Security Academy — portswigger.net/web-security (the single most important resource)
+OWASP Top 10 — owasp.org
+TryHackMe — tryhackme.com
+hacktricks.wiki — reference wiki for techniques
+OWASP Juice Shop / DVWA — deliberately vulnerable practice apps
+
+Free — Video/Community
+
+Jason Haddix — "The Bug Hunter's Methodology" talks
+NahamSec, STÖK, InsiderPhD, Farah Hawa — YouTube channels with live hacking + tutorials
+HackerOne Hacktivity + Bugcrowd disclosed reports — real-world report examples
+
+Paid but worth it
+
+PentesterLab Pro (~$20/mo)
+HackTheBox VIP (~$14/mo)
+Book: Real-World Bug Hunting by Peter Yaworski
+Book: The Web Application Hacker's Handbook by Stuttard & Pinto (dense, but the classic reference)
+
+Tools you'll use throughout
+
+Burp Suite (Community → Pro once earning)
+Subfinder, Amass, httpx, ffuf, Nuclei
+SQLMap, Nmap
+Browser DevTools (used daily)
+Weekly Time Budget (Suggested)
+Activity	Hours/week
+Concept learning (reading/video)	4–5
+Hands-on labs/practice	8–10
+Real recon/hunting (Month 3–4)	5–8
+Report writing/review	2–3
+
+Total: ~1.5–3 hrs/day, 6 days/week — sustainable pace beats burnout.
+
+Key Mindset Notes
+Labs teach mechanics, real targets teach patience. Expect to go days without finding anything once you start real hunting — that's normal, not failure.
+Read every disclosed report you can. Pattern recognition from others' findings is one of the fastest ways to improve.
+Document everything you learn in your own notes (Notion/Obsidian) — you'll refer back constantly.
+Start with VDPs and low-competition programs. Ego aside, this is where beginners actually land their first accepted reports.
+Consistency > intensity. Four months of steady daily practice will outperform sporadic 10-hour weekend binges every time.
